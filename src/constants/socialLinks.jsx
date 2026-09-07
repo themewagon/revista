@@ -23,7 +23,7 @@ const SocialLinks = () => {
         <li>
           <a
             href="#"
-            target="_blank"
+            
             rel="noopener noreferrer"
             aria-label="Link to Subreddit"
           >
@@ -33,7 +33,7 @@ const SocialLinks = () => {
         <li>
           <a
             href="#"
-            target="_blank"
+            
             rel="noopener noreferrer"
             aria-label="Link to Twitter"
           >
