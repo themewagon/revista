@@ -1,6 +1,7 @@
 import type { Post } from './content/types';
 import { formatDateLong, formatDateShort } from './formatDate';
 import slugify from 'slugify';
+import { sitePath } from './sitePath';
 
 export function calculateReadingTime(
   words: number,
@@ -19,11 +20,11 @@ export function getPostSlug(post: Post): string {
 export function getPostUrl(post: Post): string {
   const categorySlug = slugify(post.data.category, { lower: true });
   const slug = getPostSlug(post);
-  return `/${categorySlug}/${slug}`;
+  return sitePath(`/${categorySlug}/${slug}`);
 }
 
 export function getCategoryUrl(category: string): string {
-  return `/${slugify(category, { lower: true })}`;
+  return sitePath(`/${slugify(category, { lower: true })}`);
 }
 
 export interface NormalizedPostData {

@@ -1,4 +1,5 @@
 ---
+import { sitePath } from '../utils/sitePath';
 import slugify from 'slugify';
 import { categories } from '../utils/heroCategories';
 ---
@@ -18,7 +19,7 @@ import { categories } from '../utils/heroCategories';
         <div class="hero-categories">
           {categories.map((category, index, arr) => {
             const isLast = arr.length - 1 === index;
-            const href = isLast ? '/categories' : `/${slugify(category.category).toLowerCase()}`;
+            const href = isLast ? sitePath('/categories') : sitePath(`/${slugify(category.category).toLowerCase()}`);
             const styleString = `box-shadow: 0 0 40px; background-color: ${category.color}; color: ${category.color};`;
             
             return (

@@ -5,6 +5,7 @@ import '../css/pages.scss';
 import '../css/components.scss';
 import NavbarWrapper from '../components/NavbarWrapper';
 import Footer from '../components/Footer.astro';
+import { sitePath } from '../utils/sitePath';
 
 interface Props {
   title?: string;
@@ -20,13 +21,13 @@ const siteMetadata = {
   title: 'Revista',
   description: 'Revista is an open source blog/magazine template. Simply write articles in Markdown, place in the content folder, and Revista will automatically create categories and articles!',
   url: import.meta.env.SITE || 'https://yourdomain.com',
-  defaultImage: '/logo.png',
+  defaultImage: sitePath('/logo.png'),
   twitterUsername: '',
 };
 
 const pageTitle = title || siteMetadata.title;
 const pageDescription = description || siteMetadata.description;
-const pageImage = image ? `${siteMetadata.url}${image}` : `${siteMetadata.url}${siteMetadata.defaultImage}`;
+const pageImage = image ? `${siteMetadata.url}${sitePath(image)}` : `${siteMetadata.url}${siteMetadata.defaultImage}`;
 const pageUrl = `${siteMetadata.url}${Astro.url.pathname}`;
 ---
 
@@ -35,7 +36,7 @@ const pageUrl = `${siteMetadata.url}${Astro.url.pathname}`;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href={sitePath('/favicon.ico')} />
     
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />

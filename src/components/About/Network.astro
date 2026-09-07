@@ -1,4 +1,5 @@
 ---
+import { sitePath } from '../../utils/sitePath';
 import { Image } from 'astro:assets';
 import { AiOutlineDeploymentUnit } from 'react-icons/ai';
 import undrawOpenSource from '../../assets/undraw_open_source.svg';
@@ -49,7 +50,7 @@ import undrawOpenSource from '../../assets/undraw_open_source.svg';
             <p>
               Contributing is very easy. If you share our vision, we'd love for you to help us grow.
             </p>
-            <a href="/support-us" class="network-card-btn not-blue">
+            <a href={sitePath('/support-us')} class="network-card-btn not-blue">
               How to Contribute
             </a>
           </div>

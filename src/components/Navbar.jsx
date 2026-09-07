@@ -3,6 +3,7 @@ import { FaBars } from 'react-icons/fa'
 import Links from '../constants/links'
 import heart from '../assets/heart.png'
 import logo from '../assets/logo.png'
+import { sitePath } from '../utils/sitePath'
 import '../css/navbar.css'
 
 const Navbar = ({ toggle }) => {
@@ -11,7 +12,7 @@ const Navbar = ({ toggle }) => {
       <nav className="navbar">
         <div className="nav-center">
           <div className="nav-header">
-            <a href="/" className="nav-logo not-blue">
+            <a href={sitePath('/')} className="nav-logo not-blue">
               <img src={logo.src} alt="Revista Logo" width="100" height="100" />
               <div className="logo-text">
                 <span className="nav-word-open">Rev</span>
@@ -33,7 +34,7 @@ const Navbar = ({ toggle }) => {
             className="support-us-link not-blue"
             target="_blank"
             rel="noreferrer noopener"
-            href="/support-us"
+            href={sitePath('/support-us')}
           >
             <img
               src={heart.src}

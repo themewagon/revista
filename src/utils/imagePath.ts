@@ -1,3 +1,5 @@
+import { sitePath } from './sitePath';
+
 export function resolveImagePath(imagePath: string | undefined | null): string {
   if (!imagePath) {
     return '';
@@ -8,18 +10,18 @@ export function resolveImagePath(imagePath: string | undefined | null): string {
   }
 
   if (imagePath.startsWith('/')) {
-    return imagePath;
+    return sitePath(imagePath);
   }
 
   if (imagePath.startsWith('../../content/')) {
-    return imagePath.replace('../../content/', '/content/');
+    return sitePath(imagePath.replace('../../content/', '/content/'));
   }
 
   if (imagePath.startsWith('../')) {
-    return `/${imagePath.replace('../', '')}`;
+    return sitePath(imagePath.replace('../', ''));
   }
 
-  return `/content/${imagePath}`;
+  return sitePath(`/content/${imagePath}`);
 }
 
 export function isValidImagePath(imagePath: string | undefined | null): boolean {

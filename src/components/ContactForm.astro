@@ -118,7 +118,7 @@
       formData.append('subject', 'New Contact Form Submission');
       formData.append('replyTo', emailInput.value);
       
-      const redirectUrl = import.meta.env.PUBLIC_STATICFORMS_REDIRECT_URL || '/success';
+      const redirectUrl = import.meta.env.PUBLIC_STATICFORMS_REDIRECT_URL || `${import.meta.env.BASE_URL}success`;
       if (redirectUrl) {
         formData.append('redirectTo', redirectUrl);
       }

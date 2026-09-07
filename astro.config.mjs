@@ -6,6 +6,8 @@ import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 
 export default defineConfig({
+  site: 'https://themewagon.github.io',
+  base: '/revista',
   image: {
     service: passthroughImageService(),
   },

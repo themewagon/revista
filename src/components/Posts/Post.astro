@@ -2,6 +2,7 @@
 import slugify from 'slugify';
 import { getColor } from '../../utils/heroCategories';
 import { resolveImagePath } from '../../utils/imagePath';
+import { sitePath } from '../../utils/sitePath';
 import { calculateReadingTime, getCategoryUrl } from '../../utils/postHelpers';
 import { formatDateLong, formatDateShort } from '../../utils/formatDate';
 import type { Post } from '../../utils/getPosts';
@@ -41,7 +42,7 @@ const categoryUrl = category ? getCategoryUrl(category) : '';
 ---
 
 <article class="post-wrapper card card-bg card-shadow">
-  <a href={`/${category.toLowerCase()}/${slug}`}>
+  <a href={sitePath(`/${category.toLowerCase()}/${slug}`)}>
     {imageSrc && (
       <img 
         src={imageSrc} 
@@ -53,7 +54,7 @@ const categoryUrl = category ? getCategoryUrl(category) : '';
   </a>
 
   <div class="card-body category-page-card">
-    <a href={`/${category.toLowerCase()}/${slug}`}>
+    <a href={sitePath(`/${category.toLowerCase()}/${slug}`)}>
       <h3>{title}</h3>
     </a>
 
@@ -84,11 +85,11 @@ const categoryUrl = category ? getCategoryUrl(category) : '';
         </a>
       </li>
     </ul>
-    <a class="excerpt-link" href={`/${category.toLowerCase()}/${slug}`}>
+    <a class="excerpt-link" href={sitePath(`/${category.toLowerCase()}/${slug}`)}>
       <p class="excerpt">{excerpt}</p>
     </a>
 
-    <a class="btn btn-outline-primary" href={`/${category.toLowerCase()}/${slug}`}>
+    <a class="btn btn-outline-primary" href={sitePath(`/${category.toLowerCase()}/${slug}`)}>
       Read More
     </a>
   </div>

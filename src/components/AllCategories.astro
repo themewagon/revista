@@ -1,4 +1,5 @@
 ---
+import { sitePath } from '../utils/sitePath';
 import { Image } from 'astro:assets';
 import slugify from 'slugify';
 import { getColor } from '../utils/heroCategories';
@@ -21,7 +22,7 @@ const allCategories = [...new Set(posts.map(post => post.data.category))].sort()
               <a
                 class="item not-blue"
                 key={index}
-                href={`/${slugify(category).toLowerCase()}`}
+                href={sitePath(`/${slugify(category).toLowerCase()}`)}
               >
                 <div
                   class="category-color"

@@ -2,6 +2,7 @@ import React from 'react'
 import Links from '../constants/links'
 import { IoMdClose } from 'react-icons/io'
 import '../css/mobile-menu.css'
+import { sitePath } from '../utils/sitePath'
 
 const MobileMenu = ({ isOpen, toggle }) => {
   return (
@@ -16,7 +17,7 @@ const MobileMenu = ({ isOpen, toggle }) => {
             className="support-us-link not-blue"
             target="_blank"
             rel="noreferrer noopener"
-            href="/support-us"
+            href={sitePath('/support-us')}
           >
             Support Us
           </a>

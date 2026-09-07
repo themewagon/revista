@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yourdomain.com/sitemap-index.xml
+Sitemap: https://themewagon.github.io/revista/sitemap-index.xml

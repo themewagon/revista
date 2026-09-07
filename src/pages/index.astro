@@ -5,6 +5,7 @@ import Featured from '../components/featured/Featured.astro';
 import Notification from '../components/Notification.astro';
 import RecentPosts from '../components/RecentPosts.astro';
 import { getAllPosts } from '../utils/getPosts';
+import { sitePath } from '../utils/sitePath';
 
 const allPosts = await getAllPosts();
 const sortedPosts = allPosts.sort((a, b) => {
@@ -21,7 +22,7 @@ const siteMetadata = {
   title: 'Revista',
   description: 'Revista is an open source blog/magazine template. Simply write articles in Markdown, place in the content folder, and Revista will automatically create categories and articles!',
   url: import.meta.env.SITE || 'https://yourdomain.com',
-  image: '/logo.png',
+  image: sitePath('/logo.png'),
 };
 ---
 
